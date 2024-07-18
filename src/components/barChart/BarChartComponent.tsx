@@ -2,9 +2,10 @@ import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts'
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '../ui/chart'
 import { GetKeysFromObject } from '@/helpers/GetKeysFromObject'
 import { chartConfig } from '@/constants/ChartConfig'
+import { RoofPanelInfo } from '@/types/Types'
 
 type BarChartProps = {
-  data: any[]
+  data: RoofPanelInfo[]
 }
 
 const BarChartComponent = ({ data }: BarChartProps) => {

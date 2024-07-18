@@ -1,7 +1,7 @@
 import { chartConfig } from '@/constants/ChartConfig'
 import { GetKeysFromObject } from '@/helpers/GetKeysFromObject'
 import { PieChartRoofPanel, RoofPanelInfo } from '@/types/Types'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '../ui/chart'
 import { Label, Pie, PieChart } from 'recharts'
@@ -31,7 +31,7 @@ const PieChartComponent = ({ data }: PieChartComponentProps) => {
     <Card className="flex-1 flex flex-col">
       <CardHeader className="items-center pb-0">
         <CardTitle>Pie Chart - Roof Panel Info For Week</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardDescription>{data.label}</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer config={chartConfig} className="mx-auto aspect-square max-h-[250px]">
@@ -47,7 +47,7 @@ const PieChartComponent = ({ data }: PieChartComponentProps) => {
                           {totalOrders.toLocaleString()}
                         </tspan>
                         <tspan x={viewBox.cx} y={(viewBox.cy || 0) + 24} className="fill-muted-foreground">
-                          Visitors
+                          Orders
                         </tspan>
                       </text>
                     )

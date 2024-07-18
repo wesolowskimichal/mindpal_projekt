@@ -8,9 +8,10 @@ type tableProps = {
   customHeaders?: {
     [key in keyof RoofPanelInfo]?: string
   }
+  onRowClick: (element: RoofPanelInfo) => void
 }
 
-const Table = ({ data, exludeData = [], customHeaders = {} }: tableProps) => {
+const Table = ({ data, onRowClick, exludeData = [], customHeaders = {} }: tableProps) => {
   return (
     <table className="flex-1 border-black border-2">
       <thead>
@@ -24,7 +25,7 @@ const Table = ({ data, exludeData = [], customHeaders = {} }: tableProps) => {
       </thead>
       <tbody>
         {data.map((obj, rowIndex) => (
-          <tr key={rowIndex} className="hover:bg-[#ccc]">
+          <tr key={rowIndex} className="hover:bg-[#ccc]" onClick={() => onRowClick(obj)}>
             {GetKeysFromObject(obj, exludeData).map((key, cellIndex) => (
               <td key={cellIndex} className="text-center">
                 {obj[key]}
