@@ -1,0 +1,56 @@
+[
+  {
+    "comp": 710,
+    "tile": 78,
+    "metal": 60,
+    "flat": 405,
+    "other": 0,
+    "id": "20-2024",
+    "label": "Week 20"
+  },
+  {
+    "comp": 196,
+    "tile": 37,
+    "metal": 0,
+    "flat": 40,
+    "other": 0,
+    "id": "21-2024",
+    "label": "Week 21"
+  },
+  {
+    "comp": 196,
+    "tile": 0,
+    "metal": 0,
+    "flat": 0,
+    "other": 0,
+    "id": "22-2024",
+    "label": "Week 22"
+  },
+  {
+    "comp": 1190,
+    "tile": 506,
+    "metal": 250,
+    "flat": 274,
+    "other": 0,
+    "id": "23-2024",
+    "label": "Week 23"
+  },
+  {
+    "comp": 344,
+    "tile": 2272,
+    "metal": 69,
+    "flat": 194,
+    "other": 0,
+    "id": "24-2024",
+    "label": "Week 24"
+  },
+  {
+    "comp": 0,
+    "tile": 24,
+    "metal": 0,
+    "flat": 0,
+    "other": 0,
+    "id": "25-2024",
+    "label": "Week 25"
+  }
+]
