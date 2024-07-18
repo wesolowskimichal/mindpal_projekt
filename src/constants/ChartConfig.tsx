@@ -20,5 +20,13 @@ export const chartConfig = {
   other: {
     label: 'Other',
     color: '#6A5ACD'
+  },
+  id: {
+    label: 'Other',
+    color: '#6A5ACD'
+  },
+  label: {
+    label: 'Other',
+    color: '#6A5ACD'
   }
 } satisfies ChartConfig
