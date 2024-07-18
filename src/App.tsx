@@ -1,7 +1,12 @@
+import Table from '@/components/table'
+import jsonData from '@/static/data.json'
+import BarChartComponent from './components/barChart/BarChartComponent'
+
 function App() {
   return (
     <>
-      <h1>Hello world</h1>
+    <BarChartComponent data={jsonData}/>
+      <Table data={jsonData} />
     </>
   )
 }
