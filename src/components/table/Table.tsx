@@ -1,26 +1,40 @@
 import { GetKeysFromObject } from '@/helpers/GetKeysFromObject'
+import { RoofPanelInfo } from '@/types/Types'
+import { memo } from 'react'
 
 type tableProps = {
-  data: any[]
+  data: RoofPanelInfo[]
+  exludeData?: Array<keyof RoofPanelInfo>
+  customHeaders?: {
+    [key in keyof RoofPanelInfo]?: string
+  }
 }
 
-const Table = ({ data }: tableProps) => {
+const Table = ({ data, exludeData = [], customHeaders = {} }: tableProps) => {
   return (
-    <table>
-      <tr>
-        {GetKeysFromObject(data[0]).map(key => (
-          <th>{String(key)}</th>
-        ))}
-      </tr>
-      {data.map(obj => (
-        <tr>
-          {GetKeysFromObject(obj).map(key => (
-            <td>{obj[key]}</td>
+    <table className="flex-1 border-black border-2">
+      <thead>
+        <tr className="bg-[#999]">
+          {GetKeysFromObject(data[0], exludeData).map((key, index) => (
+            <th key={index} className="text-center">
+              {customHeaders[key] ? customHeaders[key] : String(key)}
+            </th>
           ))}
         </tr>
-      ))}
+      </thead>
+      <tbody>
+        {data.map((obj, rowIndex) => (
+          <tr key={rowIndex} className="hover:bg-[#ccc]">
+            {GetKeysFromObject(obj, exludeData).map((key, cellIndex) => (
+              <td key={cellIndex} className="text-center">
+                {obj[key]}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
     </table>
   )
 }
 
-export default Table
+export default memo(Table)

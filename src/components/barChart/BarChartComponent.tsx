@@ -9,19 +9,13 @@ type BarChartProps = {
 
 const BarChartComponent = ({ data }: BarChartProps) => {
   return (
-    <ChartContainer config={chartConfig}>
+    <ChartContainer config={chartConfig} className="flex-1">
       <BarChart accessibilityLayer data={data}>
         <CartesianGrid vertical={false} />
-        <XAxis
-          dataKey="month"
-          tickLine={false}
-          tickMargin={10}
-          axisLine={false}
-          tickFormatter={value => value.slice(0, 3)}
-        />
+        <XAxis dataKey="label" tickLine={false} tickMargin={10} axisLine={false} />
         <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="dashed" />} />
         {GetKeysFromObject(data[0], ['id', 'label']).map(key => (
-          <Bar dataKey={String(key)} fill={`var(--color-${String(key)})`} radius={4} />
+          <Bar key={String(key)} dataKey={String(key)} fill={`var(--color-${String(key)})`} radius={4} />
         ))}
       </BarChart>
     </ChartContainer>
